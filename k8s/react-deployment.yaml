@@ -20,7 +20,10 @@ spec:
         image: mzago/frontend
         resources:
           limits:
-            memory: "356Mi"
+            memory: "512Mi"
+            cpu: "1000m"
+          requests:
+            memory: "256Mi"
             cpu: "500m"
         ports:
         - containerPort: 3000
