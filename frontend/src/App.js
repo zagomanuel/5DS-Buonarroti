@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
     <header className="App-header">
-      <h1>Cloud, Microservizi e Scalabilità</h1>
+      <h1>Cloud, Microservizi e Scalabilità - TEST</h1>
       <h2>Classe 5DS</h2>
       <div className="features-container">
         {info && info.map(item => (
