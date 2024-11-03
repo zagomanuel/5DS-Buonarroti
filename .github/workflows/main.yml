@@ -1,3 +1,4 @@
+# GitHub Action to build Docker images and push to Docker Hub
 name: Docker Image CI
 
 on:
@@ -17,13 +18,10 @@ jobs:
       id: version
       run: |
         # Extract the version number from git describe
-        VERSION_TAG=$(git describe --tags --abbrev=0)
-        # If there are additional commits or the working directory is dirty, append extra info
-        if [ -z "$VERSION_TAG" ]; then
-          VERSION_TAG="0.0.0"
-        fi
+        VERSION_TAG=$(git describe --tags --match "v[0-9]*" --abbrev=0 || echo "0.0.0")
+        # Output the version tag to be used in subsequent steps
         echo "::set-output name=tag::$VERSION_TAG"
-        
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
