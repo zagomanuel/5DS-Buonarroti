@@ -11,21 +11,32 @@ function App() {
 
   return (
     <div className="App">
-    <header className="App-header">
-      <h1>Cloud, Microservizi e Scalabilità - TEST</h1>
-      <h2>Classe 5DS</h2>
-      <div className="features-container">
-        {info && info.map(item => (
-          <div key={item.id} className="feature-card">
-            <h3>{item.titolo}</h3>
-            <p>{item.caratteristica}</p>
-          </div>
-        ))}
-      </div>
-    </header>
-</div>
-
+      <header className="App-header">
+        <h1>Cloud, Microservizi e Scalabilità - TEST</h1>
+        <h2>Classe 5DS</h2>
+        <div className="features-container">
+          <table className="features-table">
+            <thead>
+              <tr>
+                <th>Titolo</th>
+                <th>Caratteristica</th>
+              </tr>
+            </thead>
+            <tbody>
+              {info && info.map(item => (
+                <tr key={item.id}>
+                  <td>{item.titolo}</td>
+                  <td>{item.caratteristica}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </header>
+    </div>
   );
+
+  
 }
 
 export default App;
