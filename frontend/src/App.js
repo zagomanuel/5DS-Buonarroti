@@ -12,8 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Cloud, Microservizi e Scalabilità - TEST</h1>
-        <h2>Classe 5DS</h2>
+        <h1>Cloud, Microservizi e Scalabilità - Classe 5DS</h1>
         <div className="features-container">
           <table className="features-table">
             <thead>
