@@ -1,0 +1,20 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: update-images
+  namespace: flux-system
+spec:
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcd-bot
+      messageTemplate: "Update image to new version"
+    push:
+      branch: main
+  interval: 1m
+  update:
+    path: ./clusters/docker-desktop

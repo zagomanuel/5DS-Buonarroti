@@ -1,0 +1,18 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: backend-images
+  namespace: flux-system
+spec:
+  image: mzago/backend
+  interval: 1m
+---
+
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: frontend-images
+  namespace: flux-system
+spec:
+  image: mzago/frontend
+  interval: 1m
