@@ -16,11 +16,14 @@ jobs:
     - name: Extract version number
       id: version
       run: |
-        VERSION_TAG=$(git describe --tags --always --dirty)
+        # Extract the version number from git describe
+        VERSION_TAG=$(git describe --tags --abbrev=0)
+        # If there are additional commits or the working directory is dirty, append extra info
+        if [ -z "$VERSION_TAG" ]; then
+          VERSION_TAG="0.0.0"
+        fi
         echo "::set-output name=tag::$VERSION_TAG"
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
+        
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
