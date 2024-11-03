@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: 5ds
+  namespace: argocd
+spec:
+  description: Project for deploying applications to 5ds namespace
+  destinations:
+  - namespace: 5ds
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - '*'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
