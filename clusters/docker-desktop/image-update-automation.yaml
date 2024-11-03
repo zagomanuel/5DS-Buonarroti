@@ -6,7 +6,7 @@ metadata:
 spec:
   sourceRef:
     kind: GitRepository
-    name: my-git-repo
+    name: 5DS-Buonarroti
   git:
     checkout:
       ref:
