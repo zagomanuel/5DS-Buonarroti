@@ -1,11 +1,5 @@
 Cloud, microservizi e scalabilità 
 
-ok
-
-Password github
-```
-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
-```
 
 Metriche test: 
 ```
